@@ -2,6 +2,8 @@ import os
 import unittest
 import csv
 import numpy
+from Tkinter import *
+import math
 from __main__ import vtk, qt, ctk, slicer
 from slicer.ScriptedLoadableModule import *
 
@@ -357,6 +359,9 @@ class NeedleGuideTemplateWidget(ScriptedLoadableModuleWidget):
   def onOpenWindowButton(self):
     print "onOpenWindowButton(self) is called!!!"
     self.ex = ProjectionWindow()
+    self.ml = MouseLocation()
+    self.ml.setProjectionWindow(self.ex)
+    self.ml.mainloop()
     self.ex.show()
 
   def onTableSelected(self, row, column):
@@ -382,7 +387,7 @@ class NeedleGuideTemplateWidget(ScriptedLoadableModuleWidget):
 
     if self.ex:
         self.ex.setXY(x, y)	
-        self.ex.setDepth(depth)
+        #  self.ex.setDepth(depth)
         self.ex.repaint()
 
 
@@ -680,6 +685,73 @@ class NeedleGuideTemplateTest(ScriptedLoadableModuleTest):
     self.delayDisplay('Test passed!')
 
 
+class MouseLocation( Frame ):
+    def __init__( self ):
+        Frame.__init__( self )
+        self.pack( expand = YES, fill = BOTH )
+        self.master.title( "Demonstrating Mouse Events" )
+        self.master.geometry(  "275x100" )
+        self.x = None
+        self.y = None
+        self.x2 = None
+        self.y2 = None
+        self.distance = None
+        self.scale = None
+        self.area = None
+        
+        self.projectionWindow = None
+        
+        self.mousePosition = StringVar() # displays mouse position
+        self.mousePosition.set( "Mouse outside window" )
+        self.positionLabel = Label( self,textvariable = self.mousePosition )
+        self.positionLabel.pack( side = BOTTOM )
+        
+        self.bind( "<Button-1>", self.buttonPressed )
+        self.bind( "<ButtonRelease-1>", self.buttonReleased )   
+        self.bind( "<Enter>", self.enteredWindow )
+        self.bind( "<Leave>", self.exitedWindow )
+        self.bind( "<B1-Motion>", self.mouseDragged )
+    
+    def buttonPressed( self, event ):
+  	    self.mousePosition.set( "Pressed at [ " + str( event.x ) + ", " + str( event.y ) + " ]" )
+  	    self.x = event.x
+  	    self.y = event.y
+    #print (event.x)
+    #print (event.y)
+    #print self.x
+    #print self.y
+    
+    def buttonReleased( self, event ):
+        self.mousePosition.set( "Released at [ " + str( event.x ) + ", " + str( event.y ) + " ]" )
+        self.x2 = event.x
+        self.y2 = event.y
+        #print(event.x)
+        #print (event.y)
+        #print self.x2
+        #print self.y2
+        p1 = (self.x, self.y)  # point 1 coordinate
+        p2 = (self.x2, self.y2)  # point 2 coordinate
+        # self.distance = math.hypot(p2[0] - p1[0], p2[1] - p1[1]) # Linear distance 
+        self.area = self.x2 * self.y2
+        print("The area of the square is %s" % self.area)
+        self.scale = self.area / 84000 
+        if self.ProjectionWindow:
+            self.projectionWindow.setScale(scale)
+        self.destroy()
+    
+    def enteredWindow( self, event ):
+        self.mousePosition.set( "Mouse in window" )
+    
+    def exitedWindow( self, event ):
+        self.mousePosition.set( "Mouse outside window" )
+    
+    def mouseDragged( self, event ):
+        self.mousePosition.set( "Dragged at [ " + str( event.x ) + ", " + str( event.y ) + " ]" )
+
+    def setProjectionWindow( self, pw ):
+        self.projectionWindow = pw
+
+
 
 class ProjectionWindow(qt.QWidget):
 
@@ -689,6 +761,8 @@ class ProjectionWindow(qt.QWidget):
   def __init__(self, parent=None):
     qt.QWidget.__init__(self, parent)
     self.initUI()
+    
+    self.mouse = MouseLocation()
     
   def initUI(self):
       
@@ -708,7 +782,7 @@ class ProjectionWindow(qt.QWidget):
     self.text_6 = "6"
     self.text_7 = "7"
     self.setStyleSheet("background-color:black;")
-    self.setGeometry(330, 330, 355, 355)
+    self.setGeometry(330, 330 ,355 ,355) #Area of total window = 117150 ... Area of graph = 84000
     self.setWindowTitle('Crosshair')
     
     self.text_A = "A"
@@ -728,6 +802,8 @@ class ProjectionWindow(qt.QWidget):
     
     self.text_Hole = "o"
     
+    self.scale = None
+    
   def paintEvent(self, e):
         
     qp = qt.QPainter()
@@ -738,9 +814,12 @@ class ProjectionWindow(qt.QWidget):
   def setXY(self, x, y):
     self.horizontal = x
     self.vertical = y+40
+    
+  def setScale( self, scale ):
+    self.scale = scale
 
   def drawLines(self, qp):
-
+      
     pen = qt.QPen(qt.Qt.green, 2, qt.Qt.SolidLine)
       
       #Beginning of Line Drawing
@@ -951,87 +1030,17 @@ class ProjectionWindow(qt.QWidget):
 
       #End of Letter Indicators
       #Beginning of Hole Indicators A
+      
+    Spaces = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+    for i in Spaces:
+        pen.setColor(qt.Qt.white)
+        qp.setPen(pen)
+        qp.setFont(qt.QFont("Arial", 12));
+        qp.drawText(qt.QPointF(46.5 + 20*i, 63), self.text_Hole)
 
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(46.5, 63), self.text_Hole)
-
-        
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(66.5, 63), self.text_Hole)
-
-            
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(86.5, 63), self.text_Hole)
-
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(106.5, 63), self.text_Hole)
-
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(126.5, 63), self.text_Hole)
-
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(146.5, 63), self.text_Hole)
-
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(166.5, 63), self.text_Hole)
-
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(186.5, 63), self.text_Hole)
-
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(206.5, 63), self.text_Hole)
-
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(226.5, 63), self.text_Hole)
-
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(246.5, 63), self.text_Hole)
-
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(266.5, 63), self.text_Hole)
-
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(286.5, 63), self.text_Hole)
-
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(306.5, 63), self.text_Hole)
-
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(326.5, 63), self.text_Hole)
-
-      #End of Hole Indicators A
-      #Beginning of Hole Indicators B
-
+    #End of Hole Indicators A
+    #Beginning of Hole Indicators B
+    
     pen.setColor(qt.Qt.white)
     qp.setPen(pen)
     qp.setFont(qt.QFont("Arial", 12));
@@ -1117,12 +1126,10 @@ class ProjectionWindow(qt.QWidget):
     qp.setFont(qt.QFont("Arial", 12));
     qp.drawText(qt.QPointF(46.5, 103), self.text_Hole)
     
-    
     pen.setColor(qt.Qt.white)
     qp.setPen(pen)
     qp.setFont(qt.QFont("Arial", 12));
     qp.drawText(qt.QPointF(66.5, 103), self.text_Hole)
-    
     
     pen.setColor(qt.Qt.white)
     qp.setPen(pen)
@@ -2068,6 +2075,90 @@ class ProjectionWindow(qt.QWidget):
     qp.setPen(pen)
     qp.setFont(qt.QFont("Arial", 12));
     qp.drawText(qt.QPointF(326.5, 324), self.text_Hole)
+
+
+
+
+'''
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(46.5, 63), self.text_Hole)
+    
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(66.5, 63), self.text_Hole)
+    
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(86.5, 63), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(106.5, 63), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(126.5, 63), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(146.5, 63), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(166.5, 63), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(186.5, 63), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(206.5, 63), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(226.5, 63), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(246.5, 63), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(266.5, 63), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(286.5, 63), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(306.5, 63), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(326.5, 63), self.text_Hole)
+    
+    '''    
+
 
 
 
