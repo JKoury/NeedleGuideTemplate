@@ -825,25 +825,25 @@ class ProjectionWindow(qt.QWidget):
       #Beginning of Line Drawing
       
     qp.setPen(pen)
-    qp.drawLine(40, self.horizontal, 340, self.horizontal)
+    qp.drawLine(self.scale * 40, self.scale * self.horizontal, self.scale * 340, self.scale * self.horizontal)
     
     qp.setPen(pen)
-    qp.drawLine(self.vertical, 50, self.vertical, 330)
+    qp.drawLine(self.scale * self.vertical, self.scale * 50, self.scale * self.vertical, self.scale * 330)
   
     pen.setStyle(qt.Qt.DashLine)
     pen.setColor(qt.Qt.white)
     qp.setPen(pen)
-    qp.drawLine(40, 50, 340, 50)
+    qp.drawLine(self.scale * 40, self.scale * 50, self.scale * 340, self.scale * 50)
     
     pen.setStyle(qt.Qt.DashLine)
     pen.setColor(qt.Qt.white)
     qp.setPen(pen)
-    qp.drawLine(40, 50, 40, 330)
+    qp.drawLine(self.scale * 40, self.scale * 50, self.scale * 40, self.scale * 330)
     
     pen.setStyle(qt.Qt.DashLine)
     pen.setColor(qt.Qt.white)
     qp.setPen(pen)
-    qp.drawLine(40, 330, 340, 330)
+    qp.drawLine(self.scale * 40, self.scale * 330, self.scale * 340, self.scale * 330)
     
       #pen.setStyle(qt.Qt.DashLine)
       #pen.setColor(qt.Qt.white)
@@ -858,7 +858,7 @@ class ProjectionWindow(qt.QWidget):
     pen.setStyle(qt.Qt.DashLine)
     pen.setColor(qt.Qt.white)
     qp.setPen(pen)
-    qp.drawLine(340, 50, 340, 330)
+    qp.drawLine(self.scale * 340, self.scale * 50, self.scale * 340, self.scale * 330)
     
       #pen.setStyle(qt.Qt.DashLine)
       #pen.setColor(qt.Qt.white)
@@ -883,77 +883,77 @@ class ProjectionWindow(qt.QWidget):
     pen.setColor(qt.Qt.white)
     qp.setPen(pen)
     qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(44, 47), self.text_n7)
+    qp.drawText(qt.QPointF(self.scale * 44, self.scale * 47), self.text_n7)
 
     pen.setColor(qt.Qt.white)
     qp.setPen(pen)
     qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(64, 47), self.text_n6)
+    qp.drawText(qt.QPointF(self.scale * 64, self.scale * 47), self.text_n6)
 
     pen.setColor(qt.Qt.white)
     qp.setPen(pen)
     qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(84, 47), self.text_n5)
+    qp.drawText(qt.QPointF(self.scale * 84, self.scale * 47), self.text_n5)
 
     pen.setColor(qt.Qt.white)
     qp.setPen(pen)
     qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(103, 47), self.text_n4)
+    qp.drawText(qt.QPointF(self.scale * 103, self.scale * 47), self.text_n4)
 
     pen.setColor(qt.Qt.white)
     qp.setPen(pen)
     qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(124, 47), self.text_n3)
+    qp.drawText(qt.QPointF(self.scale * 124, self.scale * 47), self.text_n3)
 
     pen.setColor(qt.Qt.white)
     qp.setPen(pen)
     qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(143, 47), self.text_n2)
+    qp.drawText(qt.QPointF(self.scale * 143, self.scale * 47), self.text_n2)
 
     pen.setColor(qt.Qt.white)
     qp.setPen(pen)
     qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(163, 47), self.text_n1)
+    qp.drawText(qt.QPointF(self.scale * 163, self.scale * 47), self.text_n1)
 
     pen.setColor(qt.Qt.white)
     qp.setPen(pen)
     qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(187, 47), self.text_0)
+    qp.drawText(qt.QPointF(self.scale * 187, self.scale * 47), self.text_0)
 
     pen.setColor(qt.Qt.white)
     qp.setPen(pen)
     qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(206, 47), self.text_1)
+    qp.drawText(qt.QPointF(self.scale * 206, self.scale * 47), self.text_1)
 
     pen.setColor(qt.Qt.white)
     qp.setPen(pen)
     qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(227, 47), self.text_2)
+    qp.drawText(qt.QPointF(self.scale * 227, self.scale * 47), self.text_2)
 
     pen.setColor(qt.Qt.white)
     qp.setPen(pen)
     qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(247.5, 47), self.text_3)
+    qp.drawText(qt.QPointF(self.scale * 247.5, self.scale * 47), self.text_3)
 
     pen.setColor(qt.Qt.white)
     qp.setPen(pen)
     qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(266, 47), self.text_4)
+    qp.drawText(qt.QPointF(self.scale * 266, self.scale * 47), self.text_4)
 
     pen.setColor(qt.Qt.white)
     qp.setPen(pen)
     qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(287, 47), self.text_5)
+    qp.drawText(qt.QPointF(self.scale * 287, self.scale * 47), self.text_5)
 
     pen.setColor(qt.Qt.white)
     qp.setPen(pen)
     qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(307, 47), self.text_6)
+    qp.drawText(qt.QPointF(self.scale * 307, self.scale * 47), self.text_6)
 
     pen.setColor(qt.Qt.white)
     qp.setPen(pen)
     qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(327, 47), self.text_7)
+    qp.drawText(qt.QPointF(self.scale * 327, self.scale * 47), self.text_7)
 
       #End of Number Indicators
       #Beginning of Letter Indicators
@@ -961,1120 +961,230 @@ class ProjectionWindow(qt.QWidget):
     pen.setColor(qt.Qt.white)
     qp.setPen(pen)
     qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(26, 63), self.text_A)
+    qp.drawText(qt.QPointF(self.scale * 26, self.scale * 63), self.text_A)
     
     pen.setColor(qt.Qt.white)
     qp.setPen(pen)
     qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(26, 84), self.text_B)
+    qp.drawText(qt.QPointF(self.scale * 26, self.scale * 84), self.text_B)
     
     pen.setColor(qt.Qt.white)
     qp.setPen(pen)
     qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(26, 103), self.text_C)
+    qp.drawText(qt.QPointF(self.scale * 26, self.scale * 103), self.text_C)
     
     pen.setColor(qt.Qt.white)
     qp.setPen(pen)
     qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(26, 123), self.text_D)
+    qp.drawText(qt.QPointF(self.scale * 26, self.scale * 123), self.text_D)
     
     pen.setColor(qt.Qt.white)
     qp.setPen(pen)
     qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(26, 144), self.text_E)
+    qp.drawText(qt.QPointF(self.scale * 26, 144), self.scale * self.text_E)
     
     pen.setColor(qt.Qt.white)
     qp.setPen(pen)
     qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(26, 164), self.text_F)
+    qp.drawText(qt.QPointF(self.scale * 26, self.scale * 164), self.text_F)
     
     pen.setColor(qt.Qt.white)
     qp.setPen(pen)
     qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(26, 184), self.text_G)
+    qp.drawText(qt.QPointF(self.scale * 26, self.scale * 184), self.text_G)
     
     pen.setColor(qt.Qt.white)
     qp.setPen(pen)
     qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(26, 204), self.text_H)
+    qp.drawText(qt.QPointF(self.scale * 26, self.scale * 204), self.text_H)
     
     pen.setColor(qt.Qt.white)
     qp.setPen(pen)
     qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(26, 224), self.text_I)
+    qp.drawText(qt.QPointF(self.scale * 26, self.scale * 224), self.text_I)
     
     pen.setColor(qt.Qt.white)
     qp.setPen(pen)
     qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(26, 244), self.text_J)
+    qp.drawText(qt.QPointF(self.scale * 26, self.scale * 244), self.text_J)
     
     pen.setColor(qt.Qt.white)
     qp.setPen(pen)
     qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(26, 264), self.text_K)
+    qp.drawText(qt.QPointF(self.scale * 26, self.scale * 264), self.text_K)
     
     pen.setColor(qt.Qt.white)
     qp.setPen(pen)
     qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(26, 284), self.text_L)
+    qp.drawText(qt.QPointF(self.scale * 26, self.scale * 284), self.text_L)
     
     pen.setColor(qt.Qt.white)
     qp.setPen(pen)
     qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(26, 304), self.text_M)
+    qp.drawText(qt.QPointF(self.scale * 26, self.scale * 304), self.text_M)
     
     pen.setColor(qt.Qt.white)
     qp.setPen(pen)
     qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(26, 324), self.text_N)
+    qp.drawText(qt.QPointF(self.scale * 26, self.scale * 324), self.text_N)
 
       #End of Letter Indicators
-      #Beginning of Hole Indicators A
+     
+    Hole_Spaces = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]      
       
-    Spaces = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+      #Beginning of Hole Indicators A
+    
+      
     for i in Spaces:
         pen.setColor(qt.Qt.white)
         qp.setPen(pen)
         qp.setFont(qt.QFont("Arial", 12));
-        qp.drawText(qt.QPointF(46.5 + 20*i, 63), self.text_Hole)
+        qp.drawText(qt.QPointF(self.scale * (46.5 + 20*i), self.scale * 63), self.text_Hole)
 
+      
     #End of Hole Indicators A
     #Beginning of Hole Indicators B
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(46.5, 84), self.text_Hole)
-    
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(66.5, 84), self.text_Hole)
-    
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(86.5, 84), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(106.5, 84), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(126.5, 84), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(146.5, 84), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(166.5, 84), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(186.5, 84), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(206.5, 84), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(226.5, 84), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(246.5, 84), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(266.5, 84), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(286.5, 84), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(306.5, 84), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(326.5, 84), self.text_Hole)
-
+      
+      
+    for i in Spaces:
+        pen.setColor(qt.Qt.white)
+        qp.setPen(pen)
+        qp.setFont(qt.QFont("Arial", 12));
+        qp.drawText(qt.QPointF(self.scale * (46.5 + 20*i), self.scale * 85), self.text_Hole)        
+      
+      
       #End of Hole Indicators B
       #Beginning of Hole Indicators C
 
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(46.5, 103), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(66.5, 103), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(86.5, 103), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(106.5, 103), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(126.5, 103), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(146.5, 103), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(166.5, 103), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(186.5, 103), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(206.5, 103), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(226.5, 103), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(246.5, 103), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(266.5, 103), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(286.5, 103), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(306.5, 103), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(326.5, 103), self.text_Hole)
 
+    for i in Spaces:
+        pen.setColor(qt.Qt.white)
+        qp.setPen(pen)
+        qp.setFont(qt.QFont("Arial", 12));
+        qp.drawText(qt.QPointF(self.scale * (46.5 + 20*i), self.scale * 103), self.text_Hole)          
+          
+            
       #End of Hole Indicators C
       #Beginning of Hole Indicators D
 
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(46.5, 123), self.text_Hole)
+
+    for i in Spaces:
+        pen.setColor(qt.Qt.white)
+        qp.setPen(pen)
+        qp.setFont(qt.QFont("Arial", 12));
+        qp.drawText(qt.QPointF(self.scale * (46.5 + 20*i), self.scale * 123), self.text_Hole)      
             
-            
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(66.5,123), self.text_Hole)
-            
-            
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(86.5,123), self.text_Hole)
-            
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(106.5, 123), self.text_Hole)
-            
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(126.5, 123), self.text_Hole)
-            
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(146.5, 123), self.text_Hole)
-            
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(166.5, 123), self.text_Hole)
-            
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(186.5, 123), self.text_Hole)
-            
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(206.5, 123), self.text_Hole)
-            
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(226.5, 123), self.text_Hole)
-            
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(246.5, 123), self.text_Hole)
-            
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(266.5, 123), self.text_Hole)
-            
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(286.5, 123), self.text_Hole)
-            
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(306.5, 123), self.text_Hole)
-            
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(326.5, 123), self.text_Hole)
 
       #End of Hole Indicators D
       #Beginning of Hole Indicators E
 
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(46.5, 144), self.text_Hole)
-    
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(66.5,144), self.text_Hole)
-    
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(86.5,144), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(106.5, 144), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(126.5, 144), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(146.5, 144), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(166.5, 144), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(186.5, 144), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(206.5, 144), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(226.5, 144), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(246.5, 144), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(266.5, 144), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(286.5, 144), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(306.5, 144), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(326.5, 144), self.text_Hole)
+
+
+    for i in Spaces:
+        pen.setColor(qt.Qt.white)
+        qp.setPen(pen)
+        qp.setFont(qt.QFont("Arial", 12));
+        qp.drawText(qt.QPointF(self.scale * (46.5 + 20*i), self.scale * 144), self.text_Hole)      
+
 
       #End of Hole Indicators E
       #Beginning of Hole Indicators F
 
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(46.5, 164), self.text_Hole)
-    
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(66.5,164), self.text_Hole)
-    
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(86.5,164), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(106.5, 164), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(126.5, 164), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(146.5, 164), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(166.5, 164), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(186.5, 164), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(206.5, 164), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(226.5, 164), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(246.5, 164), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(266.5, 164), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(286.5, 164), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(306.5, 164), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(326.5, 164), self.text_Hole)
+
+    for i in Spaces:
+        pen.setColor(qt.Qt.white)
+        qp.setPen(pen)
+        qp.setFont(qt.QFont("Arial", 12));
+        qp.drawText(qt.QPointF(self.scale * (46.5 + 20*i), self.scale * 164), self.text_Hole)      
+
 
       #End of Hole Indicators F
       #Beginning of Hole Indicators G
 
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(46.5, 184), self.text_Hole)
+
+    for i in Spaces:
+        pen.setColor(qt.Qt.white)
+        qp.setPen(pen)
+        qp.setFont(qt.QFont("Arial", 12));
+        qp.drawText(qt.QPointF(self.scale * (46.5 + 20*i), self.scale * 184), self.text_Hole)         
     
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(66.5,184), self.text_Hole)
-    
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(86.5,184), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(106.5, 184), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(126.5, 184), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(146.5, 184), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(166.5, 184), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(186.5, 184), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(206.5, 184), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(226.5, 184), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(246.5, 184), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(266.5, 184), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(286.5, 184), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(306.5, 184), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(326.5, 184), self.text_Hole)
 
       #End of Hole Indicators G
       #Beginning of Hole Indicators H
 
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(46.5, 204), self.text_Hole)
-    
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(66.5,204), self.text_Hole)
-    
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(86.5,204), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(106.5, 204), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(126.5, 204), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(146.5, 204), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(166.5, 204), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(186.5, 204), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(206.5, 204), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(226.5, 204), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(246.5, 204), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(266.5, 204), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(286.5, 204), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(306.5, 204), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(326.5, 204), self.text_Hole)
+
+    for i in Spaces:
+        pen.setColor(qt.Qt.white)
+        qp.setPen(pen)
+        qp.setFont(qt.QFont("Arial", 12));
+        qp.drawText(qt.QPointF(self.scale * (46.5 + 20*i), self.scale * 204), self.text_Hole)    
+
 
       #End of Hole Indicators H
       #Beginning of Hole Indicators I
 
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(46.5, 224), self.text_Hole)
-    
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(66.5,224), self.text_Hole)
-    
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(86.5,224), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(106.5, 224), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(126.5, 224), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(146.5, 224), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(166.5, 224), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(186.5, 224), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(206.5, 224), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(226.5, 224), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(246.5, 224), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(266.5, 224), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(286.5, 224), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(306.5, 224), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(326.5, 224), self.text_Hole)
+
+    for i in Spaces:
+        pen.setColor(qt.Qt.white)
+        qp.setPen(pen)
+        qp.setFont(qt.QFont("Arial", 12));
+        qp.drawText(qt.QPointF(self.scale * (46.5 + 20*i), self.scale * 224), self.text_Hole) 
+
 
       #End of Hole Indicators I
       #Beginning of Hole Indicators J
 
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(46.5, 244), self.text_Hole)
-    
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(66.5,244), self.text_Hole)
-    
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(86.5,244), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(106.5, 244), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(126.5, 244), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(146.5, 244), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(166.5, 244), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(186.5, 244), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(206.5, 244), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(226.5, 244), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(246.5, 244), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(266.5, 244), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(286.5, 244), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(306.5, 244), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(326.5, 244), self.text_Hole)
+
+    for i in Spaces:
+        pen.setColor(qt.Qt.white)
+        qp.setPen(pen)
+        qp.setFont(qt.QFont("Arial", 12));
+        qp.drawText(qt.QPointF(self.scale * (46.5 + 20*i), self.scale * 244), self.text_Hole)
+
 
       #End of Hole Indicators J
       #Beginning of Hole Indicators K
 
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(46.5, 264), self.text_Hole)
-    
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(66.5,264), self.text_Hole)
-    
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(86.5,264), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(106.5, 264), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(126.5, 264), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(146.5, 264), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(166.5, 264), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(186.5, 264), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(206.5, 264), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(226.5, 264), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(246.5, 264), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(266.5, 264), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(286.5, 264), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(306.5, 264), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(326.5, 264), self.text_Hole)
+
+    for i in Spaces:
+        pen.setColor(qt.Qt.white)
+        qp.setPen(pen)
+        qp.setFont(qt.QFont("Arial", 12));
+        qp.drawText(qt.QPointF(self.scale * (46.5 + 20*i), self.scale * 264), self.text_Hole)
+
 
       #End of Hole Indicators K
       #Beginning of Hole Indicators L
 
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(46.5, 284), self.text_Hole)
-    
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(66.5,284), self.text_Hole)
-    
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(86.5,284), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(106.5, 284), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(126.5, 284), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(146.5, 284), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(166.5, 284), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(186.5, 284), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(206.5, 284), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(226.5, 284), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(246.5, 284), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(266.5, 284), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(286.5, 284), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(306.5, 284), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(326.5, 284), self.text_Hole)
 
+    for i in Spaces:
+        pen.setColor(qt.Qt.white)
+        qp.setPen(pen)
+        qp.setFont(qt.QFont("Arial", 12));
+        qp.drawText(qt.QPointF(self.scale * (46.5 + 20*i), self.scale * 284), self.text_Hole)
+
+        
       #End of Hole Indicators L
       #Beginning of Hole Indicators M
 
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(46.5, 304), self.text_Hole)
-    
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(66.5,304), self.text_Hole)
-    
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(86.5,304), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(106.5, 304), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(126.5, 304), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(146.5, 304), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(166.5, 304), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(186.5, 304), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(206.5, 304), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(226.5, 304), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(246.5, 304), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(266.5, 304), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(286.5, 304), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(306.5, 304), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(326.5, 304), self.text_Hole)
+
+    for i in Spaces:
+        pen.setColor(qt.Qt.white)
+        qp.setPen(pen)
+        qp.setFont(qt.QFont("Arial", 12));
+        qp.drawText(qt.QPointF(self.scale * (46.5 + 20*i), self.scale * 304), self.text_Hole)
+
 
       #End of Hole Indicators M
       #Beginning of Hole Indicators N
 
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(46.5, 324), self.text_Hole)
-    
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(66.5,324), self.text_Hole)
-    
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(86.5,324), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(106.5, 324), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(126.5, 324), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(146.5, 324), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(166.5, 324), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(186.5, 324), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(206.5, 324), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(226.5, 324), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(246.5, 324), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(266.5, 324), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(286.5, 324), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(306.5, 324), self.text_Hole)
-    
-    pen.setColor(qt.Qt.white)
-    qp.setPen(pen)
-    qp.setFont(qt.QFont("Arial", 12));
-    qp.drawText(qt.QPointF(326.5, 324), self.text_Hole)
+
+    for i in Spaces:
+        pen.setColor(qt.Qt.white)
+        qp.setPen(pen)
+        qp.setFont(qt.QFont("Arial", 12));
+        qp.drawText(qt.QPointF(self.scale * (46.5 + 20*i), self.scale * 324), self.text_Hole)
+
 
 
 
@@ -2160,5 +1270,1026 @@ class ProjectionWindow(qt.QWidget):
     '''    
 
 
+'''    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(46.5, 84), self.text_Hole)
+    
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(66.5, 84), self.text_Hole)
+    
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(86.5, 84), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(106.5, 84), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(126.5, 84), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(146.5, 84), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(166.5, 84), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(186.5, 84), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(206.5, 84), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(226.5, 84), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(246.5, 84), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(266.5, 84), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(286.5, 84), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(306.5, 84), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(326.5, 84), self.text_Hole)
+    '''
+
+'''
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(46.5, 103), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(66.5, 103), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(86.5, 103), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(106.5, 103), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(126.5, 103), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(146.5, 103), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(166.5, 103), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(186.5, 103), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(206.5, 103), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(226.5, 103), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(246.5, 103), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(266.5, 103), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(286.5, 103), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(306.5, 103), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(326.5, 103), self.text_Hole)
+    '''
+
+'''
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(46.5, 123), self.text_Hole)
+    
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(66.5,123), self.text_Hole)
+    
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(86.5,123), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(106.5, 123), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(126.5, 123), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(146.5, 123), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(166.5, 123), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(186.5, 123), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(206.5, 123), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(226.5, 123), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(246.5, 123), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(266.5, 123), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(286.5, 123), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(306.5, 123), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(326.5, 123), self.text_Hole)
+    '''
+
+'''
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(46.5, 144), self.text_Hole)
+    
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(66.5,144), self.text_Hole)
+    
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(86.5,144), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(106.5, 144), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(126.5, 144), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(146.5, 144), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(166.5, 144), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(186.5, 144), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(206.5, 144), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(226.5, 144), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(246.5, 144), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(266.5, 144), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(286.5, 144), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(306.5, 144), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(326.5, 144), self.text_Hole)
+    '''
+
+'''
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(46.5, 164), self.text_Hole)
+    
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(66.5,164), self.text_Hole)
+    
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(86.5,164), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(106.5, 164), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(126.5, 164), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(146.5, 164), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(166.5, 164), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(186.5, 164), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(206.5, 164), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(226.5, 164), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(246.5, 164), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(266.5, 164), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(286.5, 164), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(306.5, 164), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(326.5, 164), self.text_Hole)
+    '''
+
+'''
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(46.5, 184), self.text_Hole)
+    
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(66.5,184), self.text_Hole)
+    
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(86.5,184), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(106.5, 184), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(126.5, 184), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(146.5, 184), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(166.5, 184), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(186.5, 184), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(206.5, 184), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(226.5, 184), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(246.5, 184), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(266.5, 184), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(286.5, 184), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(306.5, 184), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(326.5, 184), self.text_Hole)
+    '''
+'''
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(46.5, 204), self.text_Hole)
+    
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(66.5,204), self.text_Hole)
+    
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(86.5,204), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(106.5, 204), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(126.5, 204), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(146.5, 204), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(166.5, 204), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(186.5, 204), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(206.5, 204), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(226.5, 204), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(246.5, 204), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(266.5, 204), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(286.5, 204), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(306.5, 204), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(326.5, 204), self.text_Hole)
+    
+    '''
 
 
+'''
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(46.5, 224), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(66.5,224), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(86.5,224), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(106.5, 224), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(126.5, 224), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(146.5, 224), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(166.5, 224), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(186.5, 224), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(206.5, 224), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(226.5, 224), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(246.5, 224), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(266.5, 224), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(286.5, 224), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(306.5, 224), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(326.5, 224), self.text_Hole)
+    '''
+
+'''
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(46.5, 244), self.text_Hole)
+    
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(66.5,244), self.text_Hole)
+    
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(86.5,244), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(106.5, 244), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(126.5, 244), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(146.5, 244), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(166.5, 244), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(186.5, 244), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(206.5, 244), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(226.5, 244), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(246.5, 244), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(266.5, 244), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(286.5, 244), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(306.5, 244), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(326.5, 244), self.text_Hole)
+    '''
+
+'''
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(46.5, 264), self.text_Hole)
+    
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(66.5,264), self.text_Hole)
+    
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(86.5,264), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(106.5, 264), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(126.5, 264), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(146.5, 264), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(166.5, 264), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(186.5, 264), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(206.5, 264), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(226.5, 264), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(246.5, 264), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(266.5, 264), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(286.5, 264), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(306.5, 264), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(326.5, 264), self.text_Hole)
+    '''
+
+'''
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(46.5, 284), self.text_Hole)
+    
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(66.5,284), self.text_Hole)
+    
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(86.5,284), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(106.5, 284), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(126.5, 284), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(146.5, 284), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(166.5, 284), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(186.5, 284), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(206.5, 284), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(226.5, 284), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(246.5, 284), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(266.5, 284), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(286.5, 284), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(306.5, 284), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(326.5, 284), self.text_Hole)
+    '''
+
+'''
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(46.5, 304), self.text_Hole)
+    
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(66.5,304), self.text_Hole)
+    
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(86.5,304), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(106.5, 304), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(126.5, 304), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(146.5, 304), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(166.5, 304), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(186.5, 304), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(206.5, 304), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(226.5, 304), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(246.5, 304), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(266.5, 304), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(286.5, 304), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(306.5, 304), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(326.5, 304), self.text_Hole)
+    '''
+
+'''
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(46.5, 324), self.text_Hole)
+    
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(66.5,324), self.text_Hole)
+    
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(86.5,324), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(106.5, 324), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(126.5, 324), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(146.5, 324), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(166.5, 324), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(186.5, 324), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(206.5, 324), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(226.5, 324), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(246.5, 324), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(266.5, 324), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(286.5, 324), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(306.5, 324), self.text_Hole)
+    
+    pen.setColor(qt.Qt.white)
+    qp.setPen(pen)
+    qp.setFont(qt.QFont("Arial", 12));
+    qp.drawText(qt.QPointF(326.5, 324), self.text_Hole)
+    '''
