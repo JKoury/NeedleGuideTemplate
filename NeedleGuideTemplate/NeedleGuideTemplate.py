@@ -377,13 +377,15 @@ class NeedleGuideTemplateWidget(ScriptedLoadableModuleWidget):
         print indexY
         
         d = 20
-        Letters={'A': .5,'B': 1.5,'C': 2.5,'D': 3.5,'E': 4.5,'F': 5.5,'G': 6.5,'H': 7.5,'I': 8.5,'J':9.5,'K':10.5,'L':11.5,'M':12.5,'N':13.5}
-        Numbers={'-7' : .5,'-6' : 1.5,'-5' : 2.5,'-4' : 3.5,'-3' : 4.5,'-2' : 5.5,'-1' : 6.5, '0' : 7.5, '1' : 8.5, '2' : 9.5, '3' : 10.5, '4' : 11.5, '5' : 12.5, '6' : 13.5, '7' : 14.5}
+        #Letters={'A': .5,'B': 1.5,'C': 2.5,'D': 3.5,'E': 4.5,'F': 5.5,'G': 6.5,'H': 7.5,'I': 8.5,'J':9.5,'K':10.5,'L':11.5,'M':12.5,'N':13.5}
+        #Numbers={'-7' : .5,'-6' : 1.5,'-5' : 2.5,'-4' : 3.5,'-3' : 4.5,'-2' : 5.5,'-1' : 6.5, '0' : 7.5, '1' : 8.5, '2' : 9.5, '3' : 10.5, '4' : 11.5, '5' : 12.5, '6' : 13.5, '7' : 14.5}
+        Letters={'A': 0.0,'B': 1.0,'C': 2.0,'D': 3.0,'E': 4.0,'F': 5.0,'G': 6.0,'H': 7.0,'I': 8.0,'J':9.0,'K':10.0,'L':11.0,'M':12.0,'N':13.0}
+        Numbers={'-7' : 0.0,'-6' : 1.0,'-5' : 2.0,'-4' : 3.0,'-3' : 4.0,'-2' : 5.0,'-1' : 6.0, '0' : 7.0, '1' : 8.0, '2' : 9.0, '3' : 10.0, '4' : 11.0, '5' : 12.0, '6' : 13.0, '7' : 14.0}
         
-        ConvertedL = Letters[indexX]
-        ConvertedN = Numbers[indexY]
-        x = ConvertedL * d + 50
-        y = ConvertedN * d
+        x = Letters[indexX]
+        y = Numbers[indexY]
+        #x = ConvertedL * d + 50
+        #y = ConvertedN * d
         
         if self.ex:
             self.ex.setXY(x, y)   
@@ -690,14 +692,14 @@ class SizeCalc(qt.QWidget):
     
     def __init__(self, parent=None):
         qt.QWidget.__init__(self, parent)
-        self.mousePointX1=None
-        self.mousePointY1=None
-        self.mousePointX2=None
-        self.mousePointY2=None
-        self.mousePointX3=None
-        self.mousePointY3=None
-        self.mousePointX4=None
-        self.mousePointY4=None
+        self.mousePointX1 = 0
+        self.mousePointY1 = 0
+        self.mousePointX2 = 0
+        self.mousePointY2 = 0
+        self.mousePointX3 = 0
+        self.mousePointY3 = 0
+        self.mousePointX4 = 0
+        self.mousePointY4 = 0
         self.state=0
         self.distance=None
         self.LT_Text="Please Select the Top Left Corner"
@@ -784,6 +786,7 @@ class SizeCalc(qt.QWidget):
     
     def onQuitButton(self):
         self.projectionWindow.setScale(self.scale)
+        self.projectionWindow.setCorners(self.mousePointX1,self.mousePointY1,self.mousePointX2,self.mousePointY2,self.mousePointX3,self.mousePointY3,self.mousePointX4,self.mousePointY4)
         self.projectionWindow.repaint()
         self.destroy()
     
@@ -882,7 +885,75 @@ class ProjectionWindow(qt.QWidget):
         
         self.scale = 1.0
         
-        self.setGeometry(0, 0, 600, 600)
+        self.mousePointX1 = 0
+        self.mousePointY1 = 0
+        
+        self.mousePointX2 = 0
+        self.mousePointY2 = 0
+        
+        self.mousePointX3 = 0
+        self.mousePointY3 = 0
+        
+        self.mousePointX4 = 0
+        self.mousePointY4 = 0
+        
+        self.LeftSideVertical=0
+        self.LeftSideHorizontal=0
+        self.RightSideVertical=0
+        self.RightSideHorizontal=0
+        self.BottomVertical=0
+        self.BottomHorizontal=0
+        self.TopVertical=0
+        self.TopHorizontal=0
+        
+        self.LetterSpacingVertical=0
+        self.LetterSpacingHorizontal=0
+        self.NumberSpacingVertical=0
+        self.NumberSpacingHorizontal=0
+        self.SpacingBottom=0
+        
+        self.LetterOriginX = 0
+        self.LetterOriginY = 0
+        self.NumberOriginX = 0
+        self.NumberOriginY = 0
+        
+        self.leftX=0
+        self.leftY=0
+        self.topX=0
+        self.topY=0
+        self.rightX=0
+        self.rightY=0
+        self.bottomX=0
+        self.bottomY=0       
+        
+        self.RightSideHoleSpacing=0
+        self.RightSideHoleSpacingHorizontal=0
+        self.RightSideHoleSpacingVertical=0
+        self.bottomHoleSpacingVertical=0
+        self.bottomHoleSpacingHorizontal=0      
+        
+        self.HorizontalLine=0
+        self.VerticalLine=0
+        
+        self.VertX1=0
+        self.VertX2=0
+        self.VertY1=0
+        self.VertY2=0
+        self.VertSlope=0
+        self.VertYInt=0
+        self.VertFinderLine=0
+        
+        self.HorizX1=0
+        self.HorizX2=0
+        self.HorizY1=0
+        self.HorizY2=0
+        self.HorizSlope=0
+        self.HorizYInt=0
+        self.HorizFinderLine=0
+        
+        
+        
+        self.setGeometry(0, 0, 1000, 1000)
         self.setWindowTitle('Template')   
         self.setWindowFlags(self.windowFlags() | qt.Qt.FramelessWindowHint)
         self.show()
@@ -914,7 +985,8 @@ class ProjectionWindow(qt.QWidget):
     
     def setXY(self, x, y):
         self.horizontal = x
-        self.vertical = y+40
+        #self.vertical = y+40
+        self.vertical = y
     
     def setTemplateLabels(self, indexX, indexY, ndepth):
         print "setTemplateLabels(%s, %s, %s) is called" % (indexX, indexY, ndepth)
@@ -938,18 +1010,67 @@ class ProjectionWindow(qt.QWidget):
             
     def setScale( self, scale ):
         self.scale = scale
+        
+    def setCorners(self,mousePointX1,mousePointY1,mousePointX2,mousePointY2,mousePointX3,mousePointY3,mousePointX4,mousePointY4):
+    	self.mousePointX1=mousePointX1
+    	self.mousePointY1=mousePointY1
+    	self.mousePointX2=mousePointX2
+    	self.mousePointY2=mousePointY2
+    	self.mousePointX3=mousePointX3
+    	self.mousePointY3=mousePointY3
+    	self.mousePointX4=mousePointX4
+    	self.mousePointY4=mousePointY4
+    	print self.mousePointX1
+    	print self.mousePointY1
+    	print self.mousePointX2
+    	print self.mousePointY2
     
+    
+    
+    	
+    	self.LeftSideVertical = float(self.mousePointY1 - self.mousePointY3)
+    	#print "The Left side is %s" % self.LeftSideVertical
+    	self.LetterSpacingVertical = self.LeftSideVertical/13.0
+    	#print "Letter Spacing Vert is %s" % self.LetterSpacingVertical
+    	self.LeftSideHorizontal= float(self.mousePointX1 - self.mousePointX3)
+    	self.LetterSpacingHorizontal= self.LeftSideHorizontal/13.0
+    	#print "Letter Spacing Horiz is %s" % self.LetterSpacingHorizontal
+    	
+    	self.LetterOriginX = float(self.mousePointX1 - 2.0 * self.scale)
+    	self.LetterOriginY = float(self.mousePointY1 + 2.0 * self.scale)
+    	
+    	self.RightSideVertical = float(self.mousePointY2 - self.mousePointY4)
+    	self.RightSideHoleSpacingVertical=self.RightSideVertical/13.0
+    	self.RightSideHorizontal=float(self.mousePointX2 - self.mousePointX4)
+    	self.RightSideHoleSpacingHorizontal=self.RightSideHorizontal/13.0
+    	
+    	self.TopVertical = float(self.mousePointY1 - self.mousePointY2)
+    	
+    	self.NumberSpacingVertical = self.TopVertical/14.0
+    	
+    	self.TopHorizontal= float(self.mousePointX1 - self.mousePointX2)
+    	self.NumberSpacingHorizontal= self.TopHorizontal/14.0
+    	
+    	self.bottomVertical=float(self.mousePointY3 - self.mousePointY4)
+    	self.bottomHorizontal=float(self.mousePointX3 - self.mousePointX4)
+    	self.bottomHoleSpacingVertical=self.bottomVertical/13.0
+    	self.bottomHoleSpacingHorizontal=self.bottomHorizontal/14.0
+    	
+    	
+    	
+    	
+    	self.NumberOriginX = float(self.mousePointX1 + 5.0 * self.scale)
+    	self.NumberOriginY = float(self.mousePointY1 - 5.0 * self.scale)
+    	
+    	
+    	self.Bottom = (math.hypot(self.mousePointX3 - self.mousePointX4, self.mousePointY3 - self.mousePointY4))
+    	
+    	
+    	
+    	
+    	
     def drawLines(self, qp):
-        
-        pen = qt.QPen(qt.Qt.green, 2, qt.Qt.SolidLine)
-        
-        #Beginning of Line Drawing
-        
-        qp.setPen(pen)
-        qp.drawLine(self.scale * 40, self.scale * self.horizontal, self.scale * 340, self.scale * self.horizontal)
-        
-        qp.setPen(pen)
-        qp.drawLine(self.scale * self.vertical, self.scale * 50, self.scale * self.vertical, self.scale * 330)
+        pen = qt.QPen(qt.Qt.white, 1, qt.Qt.DashLine)
         
         pen.setStyle(qt.Qt.DashLine)
         pen.setColor(qt.Qt.white)
@@ -960,17 +1081,17 @@ class ProjectionWindow(qt.QWidget):
         pen.setStyle(qt.Qt.DashLine)
         pen.setColor(qt.Qt.white)
         qp.setPen(pen)
-        qp.drawLine(self.scale * 40, self.scale * 50, self.scale * 340, self.scale * 50)
+        qp.drawLine(self.mousePointX1,self.mousePointY1,self.mousePointX2,self.mousePointY2)
         
         pen.setStyle(qt.Qt.DashLine)
         pen.setColor(qt.Qt.white)
         qp.setPen(pen)
-        qp.drawLine(self.scale * 40, self.scale * 50, self.scale * 40, self.scale * 330)
+        qp.drawLine(self.mousePointX1,self.mousePointY1,self.mousePointX3, self.mousePointY3)
         
         pen.setStyle(qt.Qt.DashLine)
         pen.setColor(qt.Qt.white)
         qp.setPen(pen)
-        qp.drawLine(self.scale * 40, self.scale * 330, self.scale * 340, self.scale * 330)
+        qp.drawLine(self.mousePointX3, self.mousePointY3, self.mousePointX4, self.mousePointY4)
         
         #pen.setStyle(qt.Qt.DashLine)
         #pen.setColor(qt.Qt.white)
@@ -985,7 +1106,12 @@ class ProjectionWindow(qt.QWidget):
         pen.setStyle(qt.Qt.DashLine)
         pen.setColor(qt.Qt.white)
         qp.setPen(pen)
-        qp.drawLine(self.scale * 340, self.scale * 50, self.scale * 340, self.scale * 330)
+        qp.drawLine(self.mousePointX2, self.mousePointY2, self.mousePointX4, self.mousePointY4)
+        
+        pen.setStyle(qt.Qt.DashLine)
+        pen.setColor(qt.Qt.white)
+        qp.setPen(pen)
+        qp.drawLine(self.mousePointX1,self.mousePointY1,self.mousePointX2,self.mousePointY2)
         
         #pen.setStyle(qt.Qt.DashLine)
         #pen.setColor(qt.Qt.white)
@@ -1005,158 +1131,6 @@ class ProjectionWindow(qt.QWidget):
         #qp.setFont(qt.QFont("Arial", 12));
         #qp.drawText(qt.QPointF(163, 47), self.text_info)
         
-        #Beginning of Number Indicators
-        
-        pen.setColor(qt.Qt.white)
-        qp.setPen(pen)
-        qp.setFont(qt.QFont("Arial", 12));
-        qp.drawText(qt.QPointF(self.scale * 45, self.scale * 47), self.text_n7)
-        
-        pen.setColor(qt.Qt.white)
-        qp.setPen(pen)
-        qp.setFont(qt.QFont("Arial", 12));
-        qp.drawText(qt.QPointF(self.scale * 65, self.scale * 47), self.text_n6)
-        
-        pen.setColor(qt.Qt.white)
-        qp.setPen(pen)
-        qp.setFont(qt.QFont("Arial", 12));
-        qp.drawText(qt.QPointF(self.scale * 85, self.scale * 47), self.text_n5)
-        
-        pen.setColor(qt.Qt.white)
-        qp.setPen(pen)
-        qp.setFont(qt.QFont("Arial", 12));
-        qp.drawText(qt.QPointF(self.scale * 105, self.scale * 47), self.text_n4)
-        
-        pen.setColor(qt.Qt.white)
-        qp.setPen(pen)
-        qp.setFont(qt.QFont("Arial", 12));
-        qp.drawText(qt.QPointF(self.scale * 125, self.scale * 47), self.text_n3)
-        
-        pen.setColor(qt.Qt.white)
-        qp.setPen(pen)
-        qp.setFont(qt.QFont("Arial", 12));
-        qp.drawText(qt.QPointF(self.scale * 145, self.scale * 47), self.text_n2)
-        
-        pen.setColor(qt.Qt.white)
-        qp.setPen(pen)
-        qp.setFont(qt.QFont("Arial", 12));
-        qp.drawText(qt.QPointF(self.scale * 165, self.scale * 47), self.text_n1)
-        
-        pen.setColor(qt.Qt.white)
-        qp.setPen(pen)
-        qp.setFont(qt.QFont("Arial", 12));
-        qp.drawText(qt.QPointF(self.scale * 185, self.scale * 47), self.text_0)
-        
-        pen.setColor(qt.Qt.white)
-        qp.setPen(pen)
-        qp.setFont(qt.QFont("Arial", 12));
-        qp.drawText(qt.QPointF(self.scale * 205, self.scale * 47), self.text_1)
-        
-        pen.setColor(qt.Qt.white)
-        qp.setPen(pen)
-        qp.setFont(qt.QFont("Arial", 12));
-        qp.drawText(qt.QPointF(self.scale * 225, self.scale * 47), self.text_2)
-        
-        pen.setColor(qt.Qt.white)
-        qp.setPen(pen)
-        qp.setFont(qt.QFont("Arial", 12));
-        qp.drawText(qt.QPointF(self.scale * 245, self.scale * 47), self.text_3)
-        
-        pen.setColor(qt.Qt.white)
-        qp.setPen(pen)
-        qp.setFont(qt.QFont("Arial", 12));
-        qp.drawText(qt.QPointF(self.scale * 265, self.scale * 47), self.text_4)
-        
-        pen.setColor(qt.Qt.white)
-        qp.setPen(pen)
-        qp.setFont(qt.QFont("Arial", 12));
-        qp.drawText(qt.QPointF(self.scale * 285, self.scale * 47), self.text_5)
-        
-        pen.setColor(qt.Qt.white)
-        qp.setPen(pen)
-        qp.setFont(qt.QFont("Arial", 12));
-        qp.drawText(qt.QPointF(self.scale * 305, self.scale * 47), self.text_6)
-        
-        pen.setColor(qt.Qt.white)
-        qp.setPen(pen)
-        qp.setFont(qt.QFont("Arial", 12));
-        qp.drawText(qt.QPointF(self.scale * 325, self.scale * 47), self.text_7)
-        
-        #End of Number Indicators
-        #Beginning of Letter Indicators
-        
-        pen.setColor(qt.Qt.white)
-        qp.setPen(pen)
-        qp.setFont(qt.QFont("Arial", 12));
-        qp.drawText(qt.QPointF(self.scale * 26, self.scale * 62), self.text_A)
-        
-        pen.setColor(qt.Qt.white)
-        qp.setPen(pen)
-        qp.setFont(qt.QFont("Arial", 12));
-        qp.drawText(qt.QPointF(self.scale * 26, self.scale * 82), self.text_B)
-        
-        pen.setColor(qt.Qt.white)
-        qp.setPen(pen)
-        qp.setFont(qt.QFont("Arial", 12));
-        qp.drawText(qt.QPointF(self.scale * 26, self.scale * 102), self.text_C)
-        
-        pen.setColor(qt.Qt.white)
-        qp.setPen(pen)
-        qp.setFont(qt.QFont("Arial", 12));
-        qp.drawText(qt.QPointF(self.scale * 26, self.scale * 122), self.text_D)
-        
-        pen.setColor(qt.Qt.white)
-        qp.setPen(pen)
-        qp.setFont(qt.QFont("Arial", 12));
-        qp.drawText(qt.QPointF(self.scale * 26, self.scale * 142), self.text_E)
-        
-        pen.setColor(qt.Qt.white)
-        qp.setPen(pen)
-        qp.setFont(qt.QFont("Arial", 12));
-        qp.drawText(qt.QPointF(self.scale * 26, self.scale * 162), self.text_F)
-        
-        pen.setColor(qt.Qt.white)
-        qp.setPen(pen)
-        qp.setFont(qt.QFont("Arial", 12));
-        qp.drawText(qt.QPointF(self.scale * 26, self.scale * 182), self.text_G)
-        
-        pen.setColor(qt.Qt.white)
-        qp.setPen(pen)
-        qp.setFont(qt.QFont("Arial", 12));
-        qp.drawText(qt.QPointF(self.scale * 26, self.scale * 202), self.text_H)
-        
-        pen.setColor(qt.Qt.white)
-        qp.setPen(pen)
-        qp.setFont(qt.QFont("Arial", 12));
-        qp.drawText(qt.QPointF(self.scale * 26, self.scale * 222), self.text_I)
-        
-        pen.setColor(qt.Qt.white)
-        qp.setPen(pen)
-        qp.setFont(qt.QFont("Arial", 12));
-        qp.drawText(qt.QPointF(self.scale * 26, self.scale * 242), self.text_J)
-        
-        pen.setColor(qt.Qt.white)
-        qp.setPen(pen)
-        qp.setFont(qt.QFont("Arial", 12));
-        qp.drawText(qt.QPointF(self.scale * 26, self.scale * 262), self.text_K)
-        
-        pen.setColor(qt.Qt.white)
-        qp.setPen(pen)
-        qp.setFont(qt.QFont("Arial", 12));
-        qp.drawText(qt.QPointF(self.scale * 26, self.scale * 282), self.text_L)
-        
-        pen.setColor(qt.Qt.white)
-        qp.setPen(pen)
-        qp.setFont(qt.QFont("Arial", 12));
-        qp.drawText(qt.QPointF(self.scale * 26, self.scale * 302), self.text_M)
-        
-        pen.setColor(qt.Qt.white)
-        qp.setPen(pen)
-        qp.setFont(qt.QFont("Arial", 12));
-        qp.drawText(qt.QPointF(self.scale * 26, self.scale * 322), self.text_N)
-        
-        #End of Letter Indicators
-        
         self.blink= self.blink+1
         
         if self.blink % 2 == 0: 
@@ -1172,163 +1146,72 @@ class ProjectionWindow(qt.QWidget):
           qp.drawText(qt.QPointF((self.scale * self.vertical) - 5 * self.scale,(self.scale * self.horizontal) + 4 * self.scale), "X")
         
         
-        Spaces = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14]     
-        
         #Beginning of Hole Indicators A
         
-        
-        for i in Spaces:
-            pen.setColor(qt.Qt.white)
-            qp.setPen(pen)
-            qp.setFont(qt.QFont("Arial", 12));
-            qp.drawText(qt.QPointF(self.scale * (47 + 20*i), self.scale * 61), self.text_Hole)
-        
-        
-        #End of Hole Indicators A
-        #Beginning of Hole Indicators B
-        
-        
-        for i in Spaces:
-            pen.setColor(qt.Qt.white)
-            qp.setPen(pen)
-            qp.setFont(qt.QFont("Arial", 12));
-            qp.drawText(qt.QPointF(self.scale * (47 + 20*i), self.scale * 81), self.text_Hole)       
-        
-        
-        #End of Hole Indicators B
-        #Beginning of Hole Indicators C
-        
-        
-        for i in Spaces:
-            pen.setColor(qt.Qt.white)
-            qp.setPen(pen)
-            qp.setFont(qt.QFont("Arial", 12));
-            qp.drawText(qt.QPointF(self.scale * (47 + 20*i), self.scale * 101), self.text_Hole)         
-        
-        
-        #End of Hole Indicators C
-        #Beginning of Hole Indicators D
-        
-        
-        for i in Spaces:
-            pen.setColor(qt.Qt.white)
-            qp.setPen(pen)
-            qp.setFont(qt.QFont("Arial", 12));
-            qp.drawText(qt.QPointF(self.scale * (47 + 20*i), self.scale * 121), self.text_Hole)     
-        
-        
-        #End of Hole Indicators D
-        #Beginning of Hole Indicators E
-        
-        
-        
-        for i in Spaces:
-            pen.setColor(qt.Qt.white)
-            qp.setPen(pen)
-            qp.setFont(qt.QFont("Arial", 12));
-            qp.drawText(qt.QPointF(self.scale * (47 + 20*i), self.scale * 141), self.text_Hole)     
-        
-        
-        #End of Hole Indicators E
-        #Beginning of Hole Indicators F
-        
-        
-        for i in Spaces:
-            pen.setColor(qt.Qt.white)
-            qp.setPen(pen)
-            qp.setFont(qt.QFont("Arial", 12));
-            qp.drawText(qt.QPointF(self.scale * (47 + 20*i), self.scale * 161), self.text_Hole)     
-        
-        
-        #End of Hole Indicators F
-        #Beginning of Hole Indicators G
-        
-        
-        for i in Spaces:
-            pen.setColor(qt.Qt.white)
-            qp.setPen(pen)
-            qp.setFont(qt.QFont("Arial", 12));
-            qp.drawText(qt.QPointF(self.scale * (47 + 20*i), self.scale * 181), self.text_Hole)        
-        
-        
-        #End of Hole Indicators G
-        #Beginning of Hole Indicators H
-        
-        
-        for i in Spaces:
-            pen.setColor(qt.Qt.white)
-            qp.setPen(pen)
-            qp.setFont(qt.QFont("Arial", 12));
-            qp.drawText(qt.QPointF(self.scale * (47 + 20*i), self.scale * 201), self.text_Hole)   
-        
-        
-        #End of Hole Indicators H
-        #Beginning of Hole Indicators I
-        
-        
-        for i in Spaces:
-            pen.setColor(qt.Qt.white)
-            qp.setPen(pen)
-            qp.setFont(qt.QFont("Arial", 12));
-            qp.drawText(qt.QPointF(self.scale * (47 + 20*i), self.scale * 221), self.text_Hole)
-        
-        
-        #End of Hole Indicators I
-        #Beginning of Hole Indicators J
-        
-        
-        for i in Spaces:
-            pen.setColor(qt.Qt.white)
-            qp.setPen(pen)
-            qp.setFont(qt.QFont("Arial", 12));
-            qp.drawText(qt.QPointF(self.scale * (47 + 20*i), self.scale * 241), self.text_Hole)
-        
-        
-        #End of Hole Indicators J
-        #Beginning of Hole Indicators K
-        
-        
-        for i in Spaces:
-            pen.setColor(qt.Qt.white)
-            qp.setPen(pen)
-            qp.setFont(qt.QFont("Arial", 12));
-            qp.drawText(qt.QPointF(self.scale * (47 + 20*i), self.scale * 261), self.text_Hole)
-        
-        
-        #End of Hole Indicators K
-        #Beginning of Hole Indicators L
-        
-        
-        for i in Spaces:
-            pen.setColor(qt.Qt.white)
-            qp.setPen(pen)
-            qp.setFont(qt.QFont("Arial", 12));
-            qp.drawText(qt.QPointF(self.scale * (47 + 20*i), self.scale * 281), self.text_Hole)
-        
-        
-        #End of Hole Indicators L
-        #Beginning of Hole Indicators M
-        
-        
-        for i in Spaces:
-            pen.setColor(qt.Qt.white)
-            qp.setPen(pen)
-            qp.setFont(qt.QFont("Arial", 12));
-            qp.drawText(qt.QPointF(self.scale * (47 + 20*i), self.scale * 301), self.text_Hole)
-        
-        
-        #End of Hole Indicators M
-        #Beginning of Hole Indicators N
-        
-        
-        for i in Spaces:
-            pen.setColor(qt.Qt.white)
-            qp.setPen(pen)
-            qp.setFont(qt.QFont("Arial", 12));
-            qp.drawText(qt.QPointF(self.scale * (47 + 20*i), self.scale * 321), self.text_Hole)
+     
+        textList = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N']
+        numberList = ['-7', '-6', '-5', '-4', '-3', '-2', '-1', '0', '1', '2', '3', '4', '5', '6', '7']
 
+        for n in range(0, 14):
+          i = 1.0 * n
+          
+          pen.setColor(qt.Qt.white)
+          qp.setPen(pen)
+          qp.setFont(qt.QFont("Arial", 12));
+          qp.drawText(qt.QPointF(self.LetterOriginX-15 - self.LetterSpacingHorizontal * i, self.LetterOriginY - self.LetterSpacingVertical * i), textList[n])
 
+        for n in range(0, 14):
+          i = 1.0 * n
+          pen.setStyle(qt.Qt.DashLine)
+          pen.setColor(qt.Qt.white)
+          qp.setPen(pen)
+          qp.drawLine(self.mousePointX1 - self.LetterSpacingHorizontal * i,self.mousePointY1 - self.LetterSpacingVertical * i,self.mousePointX2 - self.RightSideHoleSpacingHorizontal * i,self.mousePointY2 - self.RightSideHoleSpacingVertical * i)
+            
+          
+    #Vertical      
+          
+        for n in range(0, 15):
+          i = 1.0 * n
+          pen.setColor(qt.Qt.white)
+          qp.setPen(pen)
+          qp.setFont(qt.QFont("Arial", 12));
+          qp.drawText(qt.QPointF(self.NumberOriginX-10 - self.NumberSpacingHorizontal * i, self.NumberOriginY+10 - self.NumberSpacingVertical * i), numberList[n])
+          
+        for n in range(0, 15):
+          i = 1.0 * n
+          self.VertX1=self.mousePointX1 - self.NumberSpacingHorizontal * i
+          self.VertY1=self.mousePointY1 - self.NumberSpacingVertical * i
+            
+          self.VertX2=self.mousePointX3 - self.bottomHoleSpacingHorizontal * i
+          self.VertY2=self.mousePointY3 - self.bottomHoleSpacingVertical * i
+            
+          #self.VertSlope= ((self.VertY2-self.VertY1)/(self.VertX2-self.VertX1))
+            
+        #    self.VertFinderLine= self.VertSlope*self.VertX1
+            
+          pen.setStyle(qt.Qt.DashLine)
+          pen.setColor(qt.Qt.white)
+          qp.setPen(pen)
+          qp.drawLine(self.VertX1,self.VertY1,self.VertX2,self.VertY2)
+	            
+        #Beginning of Line Drawing
+        pen.setStyle(qt.Qt.SolidLine)
+        pen.setColor(qt.Qt.green)
+        pen.setWidth(2)
+        
+        qp.setPen(pen)
+        qp.drawLine(self.mousePointX1 - self.LetterSpacingHorizontal * self.horizontal,self.mousePointY1 - self.LetterSpacingVertical * self.horizontal,self.mousePointX2 - self.RightSideHoleSpacingHorizontal * self.horizontal,self.mousePointY2 - self.RightSideHoleSpacingVertical * self.horizontal)
 
+        #qp.drawLine(self.scale * 40, self.scale * self.horizontal, self.scale * 340, self.scale * self.horizontal)
+        
+        qp.setPen(pen)
+        #qp.drawLine(self.scale * self.vertical, self.scale * 50, self.scale * self.vertical, self.scale * 330)
 
-
+        self.VertX1=self.mousePointX1 - self.NumberSpacingHorizontal * self.vertical
+        self.VertY1=self.mousePointY1 - self.NumberSpacingVertical * self.vertical         
+        self.VertX2=self.mousePointX3 - self.bottomHoleSpacingHorizontal * self.vertical
+        self.VertY2=self.mousePointY3 - self.bottomHoleSpacingVertical * self.vertical
+        qp.drawLine(self.VertX1,self.VertY1,self.VertX2,self.VertY2)
+            
+    
 
